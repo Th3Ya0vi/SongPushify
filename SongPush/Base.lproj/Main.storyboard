@@ -1,25 +1,501 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qmB-cy-vNt">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="ufC-wZ-h7g">
+        <!--SongPush-->
+        <scene sceneID="7n2-jF-WEv">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController title="SongPush" modalTransitionStyle="crossDissolve" id="GeL-JL-YD5" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
-                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                        <viewControllerLayoutGuide type="top" id="x9K-T9-Lpr"/>
+                        <viewControllerLayoutGuide type="bottom" id="EJk-Ax-iSo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <view key="view" contentMode="scaleToFill" id="vbv-1i-rAJ">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Atf-zV-iNf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="633"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter or create username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gdc-4p-G2N">
+                                <rect key="frame" x="46" y="209" width="247" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter or create password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xad-6O-Bt5">
+                                <rect key="frame" x="46" y="264" width="247" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jBo-K6-XyK">
+                                <rect key="frame" x="104" y="399" width="130" height="35"/>
+                                <state key="normal" image="signUpButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpButtonPressed:" destination="GeL-JL-YD5" eventType="touchUpInside" id="SSO-8s-wSU"/>
+                                    <segue destination="Q1n-O4-Muw" kind="show" identifier="signup" id="d1T-vA-cNB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vUl-QM-y4t">
+                                <rect key="frame" x="104" y="337" width="130" height="35"/>
+                                <state key="normal" image="LogInButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="logInButtonPressed:" destination="GeL-JL-YD5" eventType="touchUpInside" id="m27-FY-3T2"/>
+                                    <segue destination="Q1n-O4-Muw" kind="show" identifier="login" id="EnK-3c-HPa"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Song Push!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KUW-eB-eMx">
+                                <rect key="frame" x="50" y="107" width="239" height="21"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Chu-dU-yVe"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="640" height="1136"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="Xad-6O-Bt5" id="nMt-W4-Ln6"/>
+                        <outlet property="usernameTextField" destination="gdc-4p-G2N" id="g5r-Pz-lgV"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8FR-Qg-St3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="2029" y="239"/>
+        </scene>
+        <!--Personal Playlist-->
+        <scene sceneID="EtV-VZ-blZ">
+            <objects>
+                <tableViewController id="Xbd-dN-MuH" customClass="PersonalMonetizedPlaylistTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="3Gi-ck-2Zt">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="fdx-Bc-dNh" detailTextLabel="jyM-Ko-Mhj" style="IBUITableViewCellStyleSubtitle" id="IAc-Qd-5O0">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IAc-Qd-5O0" id="WqF-bz-zjl">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="fdx-Bc-dNh">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="jyM-Ko-Mhj">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Xbd-dN-MuH" id="ynG-YV-bFm"/>
+                            <outlet property="delegate" destination="Xbd-dN-MuH" id="csR-hu-uYR"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Playlist" id="4qB-3G-ePW"/>
+                    <navigationItem key="navigationItem" title="Personal Playlist" id="6qP-Mw-0bp">
+                        <barButtonItem key="rightBarButtonItem" title="Sell Playlist!" id="7Sy-T2-djv">
+                            <connections>
+                                <action selector="sellPlaylistBarButtonPressed:" destination="Xbd-dN-MuH" id="QHi-Er-Ho5"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eF5-pN-6QW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2735" y="-1192"/>
+        </scene>
+        <!--Listen-->
+        <scene sceneID="4Ch-Up-PD9">
+            <objects>
+                <viewController title="Listen" id="Q9b-dx-0KX" customClass="MusicRecognitionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6xb-Ze-8zO"/>
+                        <viewControllerLayoutGuide type="bottom" id="24m-hr-Yam"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="rUs-Bd-V7V">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qrl-3Q-es5">
+                                <rect key="frame" x="0.0" y="-391" width="640" height="1136"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uq7-bb-7XU">
+                                <rect key="frame" x="76" y="147" width="169" height="182"/>
+                                <inset key="contentEdgeInsets" minX="0.0" minY="23" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" image="btn_musicListener.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="musicRecognitionButton:" destination="Q9b-dx-0KX" eventType="touchUpInside" id="Zzj-WX-aUO"/>
+                                    <segue destination="2Bl-fy-tWh" kind="show" identifier="loadMusicMetadata" id="zhr-XP-WEd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap the Icon to Listen!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O0n-xM-crE">
+                                <rect key="frame" x="0.0" y="98" width="332" height="50"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="24"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KZk-HQ-Jfw">
+                                <rect key="frame" x="78" y="345" width="165" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="126-r4-nMx">
+                                <rect key="frame" x="150" y="395" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UM3-CJ-s24">
+                                <rect key="frame" x="43" y="438" width="106" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TQy-an-fQ8">
+                                <rect key="frame" x="180" y="438" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Listen" id="yBf-od-WGf" userLabel="Listen"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="126-r4-nMx" id="vXi-mn-z0A"/>
+                        <outlet property="artistLabel" destination="UM3-CJ-s24" id="7f1-8X-deT"/>
+                        <outlet property="listeningText" destination="KZk-HQ-Jfw" id="PHr-BR-6bE"/>
+                        <outlet property="songLabel" destination="TQy-an-fQ8" id="iRP-VJ-pr2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JFf-Ah-J8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3482" y="-299"/>
+        </scene>
+        <!--Song Metadata View Controller-->
+        <scene sceneID="nOY-bk-dGv">
+            <objects>
+                <viewController id="2Bl-fy-tWh" customClass="SongMetadataViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="z7c-WI-HcR"/>
+                        <viewControllerLayoutGuide type="bottom" id="PUl-Ql-VPV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dPi-Re-zr7">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_1.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="dGO-rM-cua">
+                                <rect key="frame" x="-26" y="-230" width="640" height="1136"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Listening..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lCx-RO-u7f">
+                                <rect key="frame" x="30" y="105" width="255" height="44"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b67-3I-Ep3">
+                                <rect key="frame" x="56" y="262" width="170" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xgU-Wc-Dv2">
+                                <rect key="frame" x="56" y="308" width="170" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpB-xl-QqO">
+                                <rect key="frame" x="56" y="353" width="170" height="30"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sVk-9d-91j">
+                                <rect key="frame" x="32" y="174" width="253" height="44"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="ckm-6r-Xhy">
+                                <rect key="frame" x="247" y="267" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ncN-Aa-FD3">
+                                <rect key="frame" x="30" y="431" width="119" height="30"/>
+                                <state key="normal" image="PopSongPushButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushToCloudButtonPressed:" destination="2Bl-fy-tWh" eventType="touchUpInside" id="erC-ui-7Um"/>
+                                    <segue destination="BE5-3Q-9yd" kind="show" identifier="pushSongToCloud" id="AAb-ap-BSC"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="070-pR-nof">
+                                <rect key="frame" x="175" y="431" width="119" height="30"/>
+                                <state key="normal" image="RapSongPushButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushToRapCloudButtonPressed:" destination="2Bl-fy-tWh" eventType="touchUpInside" id="NxF-f5-0fP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OOz-UO-9Jq">
+                                <rect key="frame" x="30" y="486" width="119" height="30"/>
+                                <state key="normal" image="CountrySongPushButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushToCountryButtonPressed:" destination="2Bl-fy-tWh" eventType="touchUpInside" id="kJ2-Iv-VOa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Pn-Lq-xLb">
+                                <rect key="frame" x="175" y="486" width="119" height="30"/>
+                                <state key="normal" image="RockSongPushButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushToRockCloud:" destination="2Bl-fy-tWh" eventType="touchUpInside" id="jAk-A3-81p"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y9P-X8-g68">
+                                <rect key="frame" x="30" y="533" width="119" height="30"/>
+                                <state key="normal" image="RBSongPushButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushToRBCloud:" destination="2Bl-fy-tWh" eventType="touchUpInside" id="OFf-13-npZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0f-Pr-Nyc">
+                                <rect key="frame" x="175" y="533" width="119" height="30"/>
+                                <state key="normal" image="K-PopSongPushButton.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushToKPopCloud:" destination="2Bl-fy-tWh" eventType="touchUpInside" id="ppe-g1-zoo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hjg-MX-0Rb">
+                                <rect key="frame" x="100" y="391" width="117" height="30"/>
+                                <state key="normal" image="btn_addPlaylist.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pushToPersonalPlaylist:" destination="2Bl-fy-tWh" eventType="touchUpInside" id="6tP-dx-bw7"/>
+                                    <segue destination="Xbd-dN-MuH" kind="show" identifier="pushSongToPlaylist" id="6eD-nl-3kp"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ckm-6r-Xhy" id="ie0-lY-b8e"/>
+                        <outlet property="dateRecognized" destination="rpB-xl-QqO" id="5Ig-gc-7El"/>
+                        <outlet property="songAlbumName" destination="b67-3I-Ep3" id="AiM-p6-mcq"/>
+                        <outlet property="songArtistName" destination="lCx-RO-u7f" id="Ye7-mr-vsb"/>
+                        <outlet property="songName" destination="sVk-9d-91j" id="cVX-Zt-Zzw"/>
+                        <outlet property="songReleaseDate" destination="xgU-Wc-Dv2" id="ZFe-Yy-FSM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w5i-JJ-wV0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4255" y="-306"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="KI1-Gu-ydI">
+            <objects>
+                <tabBarController id="Q1n-O4-Muw" sceneMemberID="viewController">
+                    <nil key="simulatedBottomBarMetrics"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" shadowImage="AppIcon50x50.png" id="UWm-Yl-fUa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="Q9b-dx-0KX" kind="relationship" relationship="viewControllers" id="QIJ-Ve-ghi"/>
+                        <segue destination="BE5-3Q-9yd" kind="relationship" relationship="viewControllers" id="cKt-dH-LPs"/>
+                        <segue destination="zBd-Wj-23n" kind="relationship" relationship="viewControllers" id="iHI-47-RK1"/>
+                        <segue destination="Xbd-dN-MuH" kind="relationship" relationship="viewControllers" id="p0o-PP-1tN"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PBj-n3-BNe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726" y="239"/>
+        </scene>
+        <!--Clouds-->
+        <scene sceneID="2Ma-zV-vsa">
+            <objects>
+                <tableViewController id="zBd-Wj-23n" customClass="FollowMusicGroupsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="qiD-us-M7C">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" editingAccessoryType="checkmark" id="qhm-EX-H6G">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qhm-EX-H6G" id="TiY-fe-0mb">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fo-sB-Li6">
+                                            <rect key="frame" x="185" y="8" width="86" height="23"/>
+                                            <state key="normal" title="followButton" image="follow_button.png">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="followButtonPressed:" destination="zBd-Wj-23n" eventType="touchUpInside" id="zao-O7-0Wi"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="zBd-Wj-23n" id="XNJ-qg-N0z"/>
+                            <outlet property="delegate" destination="zBd-Wj-23n" id="CbI-Uc-QXF"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Clouds" id="Rnh-7b-EHE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="irN-Hv-7jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2726" y="1610"/>
+        </scene>
+        <!--Music Groups Table View Controller-->
+        <scene sceneID="NJ5-eq-MPg">
+            <objects>
+                <tableViewController title="Music Groups Table View Controller" id="BE5-3Q-9yd" customClass="MusicGroupsTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="F0Q-lc-gfa">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" textLabel="M1C-Ls-DQN" detailTextLabel="HLz-jC-4tI" style="IBUITableViewCellStyleSubtitle" id="BwK-u0-M31">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BwK-u0-M31" id="fVb-G5-INm">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="M1C-Ls-DQN">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HLz-jC-4tI">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="jha-fl-iEp" kind="show" identifier="displaySongs" id="L0m-wZ-wnM"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="BE5-3Q-9yd" id="3aB-7y-CaL"/>
+                            <outlet property="delegate" destination="BE5-3Q-9yd" id="BXN-KY-wWo"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Song Clouds" id="boF-69-PYn"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U2c-KD-C9v" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3489" y="941"/>
+        </scene>
+        <!--Song Cloud Table View Controller-->
+        <scene sceneID="dsj-uL-CD2">
+            <objects>
+                <tableViewController id="jha-fl-iEp" customClass="SongCloudTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="2RP-pe-JRg">
+                        <rect key="frame" x="0.0" y="0.0" width="640" height="1136"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="Cell" textLabel="UbZ-R2-EaL" detailTextLabel="2sT-AA-Eaz" style="IBUITableViewCellStyleSubtitle" id="WM7-Y7-tfa">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WM7-Y7-tfa" id="At3-l6-fnn">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UbZ-R2-EaL">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="2sT-AA-Eaz">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jha-fl-iEp" id="klV-kU-O1F"/>
+                            <outlet property="delegate" destination="jha-fl-iEp" id="rSj-f9-6Vf"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wDe-U3-zS4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4232" y="941"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kf6-Jg-Ir5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qmB-cy-vNt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="640" height="1136"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="SSI-bI-HLm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GeL-JL-YD5" kind="relationship" relationship="rootViewController" id="PFk-za-d2i"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fQa-ge-gKy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="239"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppIcon50x50.png" width="50" height="50"/>
+        <image name="CountrySongPushButton.png" width="160" height="44"/>
+        <image name="K-PopSongPushButton.png" width="160" height="44"/>
+        <image name="LogInButton.png" width="160" height="40"/>
+        <image name="PopSongPushButton.png" width="160" height="44"/>
+        <image name="RBSongPushButton.png" width="160" height="44"/>
+        <image name="RapSongPushButton.png" width="160" height="44"/>
+        <image name="RockSongPushButton.png" width="160" height="44"/>
+        <image name="background_1.jpg" width="640" height="1136"/>
+        <image name="btn_addPlaylist.png" width="160" height="40"/>
+        <image name="btn_musicListener.png" width="160" height="40"/>
+        <image name="follow_button.png" width="160" height="40"/>
+        <image name="signUpButton.png" width="160" height="40"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="EnK-3c-HPa"/>
+        <segue reference="p0o-PP-1tN"/>
+        <segue reference="AAb-ap-BSC"/>
+    </inferredMetricsTieBreakers>
 </document>

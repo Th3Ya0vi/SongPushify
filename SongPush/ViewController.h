@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate, UIAlertViewDelegate>
 
+@property (nonatomic) BOOL changeScenes;
+
+@property (strong, nonatomic) UIAlertView *alertView1;
+@property (strong, nonatomic) UIAlertView *alertView2;
+@property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
+
+- (IBAction)logInButtonPressed:(UIButton *)sender;
+- (IBAction)signUpButtonPressed:(UIButton *)sender;
 
 @end
 
